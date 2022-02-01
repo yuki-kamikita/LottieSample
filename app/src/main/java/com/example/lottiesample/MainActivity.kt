@@ -15,8 +15,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val button = findViewById<Button>(R.id.button)
-        button.setOnClickListener {
+        val anim = findViewById<LottieAnimationView>(R.id.animationView)
+        anim.setOnClickListener {
             // おまけのバイブ
             val vibrator = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
@@ -27,8 +27,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             // アニメーション
-            val anim = findViewById<LottieAnimationView>(R.id.animationView)
-            anim.visibility = View.VISIBLE
             anim.playAnimation()
         }
     }
